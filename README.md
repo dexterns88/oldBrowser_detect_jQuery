@@ -2,6 +2,8 @@
 
 jquery plugin to detect old browser and write message for upload browser with link
 
+**version:** 1.0
+
 ####Requirement####
 * jQuery 1.4+
 
