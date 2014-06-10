@@ -1,4 +1,5 @@
 /*
+* The MIT License (MIT)
 * Old browser detect plugin
 * By dejan dudukovic
 * Email: dexterns88@gmail.com
@@ -78,7 +79,7 @@
           txtMessage = txtMessage + " " + tmpLink;
         }
       }
-      var tmpMessage = "<div class='messages error browser-message'>"+ txtMessage +"</div>"
+      var tmpMessage = "<div class='messages error oldbrowser-message'>"+ txtMessage +"</div>"
 
       if( settings.attachMode == 'prependTo' ) {
         message = $(tmpMessage).prependTo(holder.eq(0));

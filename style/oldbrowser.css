@@ -1,0 +1,21 @@
+.oldbrowser-message {
+  border: 1px solid #ff1717;
+  padding: 10px;
+  background: #ffd9b1;
+  position: relative;
+}
+
+.oldbrowser-message .closeBtn {
+  background-image: url(../images/dialog_close.png);
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  text-indent: -9999px;
+  overflow: hidden;
+  display: block;
+  position: absolute;
+  top: 50%;
+  right: 20px;
+  width: 24px;
+  height: 24px;
+  margin-top: -12px;
+}

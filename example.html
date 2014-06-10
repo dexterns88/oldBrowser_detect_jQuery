@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+
+    <link type="text/css" rel="stylesheet" href="style/oldbrowser.css" />
+
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.8.1.min.js"></script>
+    <script type="text/javascript" src="src/oldBrowser.js" ></script>
+
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $(document).oldBrowser({
+                text : "Your browser version is not supported. Please update to the latest version of your browser.",
+                version: {
+                    mozilla : 50,
+                    opera: 50,
+                    msie: 15,
+                    safari: 550,
+                    chrome: 540
+                },
+                browserLink: true,
+                holder: '.d',
+                debug: true,
+                closeBtn: true
+            });
+        });
+    </script>
+
+</head>
+<body>
+    <div class="d">
+        test
+    </div>
+</body>
+</html>
