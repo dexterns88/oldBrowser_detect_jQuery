@@ -1,15 +1,11 @@
 #oldBrowser_detect_jQuery
-<br/>
 
 jquery plugin to detect old browser and write message for upload browser with link
 
-<br/>
 ####Requirement####
 * jQuery 1.4+
 
-<br/>
 ####How to use:####
-<br/>
 
     $(document).ready(function(){
       $(document).oldBrowser({
@@ -50,4 +46,3 @@ version: 1.1
 - add options for links to download browser
 - add options for one time open per user/browser ( JavaScript Cookies requirement )
 
-### ###
