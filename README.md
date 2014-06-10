@@ -38,7 +38,7 @@ jquery plugin to detect old browser and write message for upload browser with li
 * closeBtn => add close btn for message box
 * debug => add debug windows where you can see browser type and version
 
-<br/>
+
 ###Features###
 
 version: 1.1
