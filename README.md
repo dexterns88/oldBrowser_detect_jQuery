@@ -46,3 +46,6 @@ version: 1.1
 - add options for links to download browser
 - add options for one time open per user/browser ( JavaScript Cookies requirement )
 
+### LICENSE ###
+
+The MIT License (MIT) Copyright (c) 2014 Dejan
