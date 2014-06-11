@@ -3,7 +3,7 @@
 * Old browser detect plugin
 * By dejan dudukovic
 * Email: dexterns88@gmail.com
-* Version: 1.1.1
+* Version: 1.1
 * */
 (function($) {
 

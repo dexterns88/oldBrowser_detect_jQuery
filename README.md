@@ -2,7 +2,7 @@
 
 jquery plugin to detect old browser and write message for upload browser with link
 
-**version:** 1.0
+**version:** 1.1
 
 ####Requirement####
 * jQuery 1.4+
@@ -42,7 +42,7 @@ jquery plugin to detect old browser and write message for upload browser with li
 
 ###Changelog###
 
-####1.1.1
+####1.1
 * bug fixed with closeBtn crash on older jQuery version below 1.7
 
 
