@@ -3,8 +3,12 @@
 * Old browser detect plugin
 * By dejan dudukovic
 * Email: dexterns88@gmail.com
-* Version: 1.1
+* Version: 1.2
 * */
+if( typeof jQuery == 'undefined' ) {
+  throw new Error('oldBrowser plugin require jQuery');
+}
+
 (function($) {
 
   $.oldBrowser = function( element , options ) {
@@ -13,12 +17,18 @@
       settings = {},
       globBrowser = {},
       setStart = false,
-      obj = this;
+      browser = {},
+      obj = this,
+      version = 1.2;
 
     element.data('oldBrowser', this);
 
     this.init = function( options ) {
       settings = $.extend( {}, $.oldBrowser.defaultOptions, options );
+
+      //checkBrowsCp to detect if jquery support browser
+      this.checkBrowsCp();
+
       //get browser
       this._getBrowser();
       this._checkIsOld();
@@ -35,6 +45,54 @@
       if( settings.closeBtn ) {
         this._createClose();
       }
+    };
+
+    this.version = function() {
+      return version;
+    };
+
+    this.checkBrowsCp = function() {
+
+      if( $.browser == undefined ) {
+        this.createBrowser();
+      } else {
+        browser = $.browser;
+      }
+
+    };
+
+    this.createBrowser = function() {
+      matched = obj.uaMatch( navigator.userAgent );
+
+      if ( matched.browser ) {
+        browser[ matched.browser ] = true;
+        browser.version = matched.version;
+      }
+
+      //Chrome is Webkit, but Webkit is also Safari.
+      if ( browser.chrome ) {
+        browser.webkit = true;
+      } else if ( browser.webkit ) {
+        browser.safari = true;
+      }
+
+    };
+
+    // jQuery code for detect browser version
+    this.uaMatch = function( ua ) {
+      ua = ua.toLowerCase();
+
+      var match = /(chrome)[ \/]([\w.]+)/.exec( ua ) ||
+        /(webkit)[ \/]([\w.]+)/.exec( ua ) ||
+        /(opera)(?:.*version|)[ \/]([\w.]+)/.exec( ua ) ||
+        /(msie) ([\w.]+)/.exec( ua ) ||
+        ua.indexOf("compatible") < 0 && /(mozilla)(?:.*? rv:([\w.]+)|)/.exec( ua ) ||
+        [];
+
+      return {
+        browser: match[ 1 ] || "",
+        version: match[ 2 ] || "0"
+      };
     };
 
     this._createClose = function() {
@@ -130,7 +188,7 @@
     };
 
     this._getBrowser = function() {
-      var browser = $.browser;
+      //var browser = $.browser;
 
       if ( !!navigator.userAgent.match(/Trident\/7\./) ) {
         globBrowser.type = 'msie';
